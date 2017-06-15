@@ -1,0 +1,20 @@
+{
+  "name": "randomColor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "Tomás Migone <tomas@p4d.com.ar> (http://www.programming4design.com.ar)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "serve-static": "^1.12.3",
+    "socket.io": "^2.0.1",
+    "socket.io-client": "^2.0.1",
+    "standard": "^10.0.2"
+  }
+}
