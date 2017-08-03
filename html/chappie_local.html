@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Controlador de Chappie</title>
+  <style media="screen">
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button1 {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 90px;
+    cursor: pointer;
+}
+.button2 {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 90px;
+    cursor: pointer;
+}
+  </style>
+  <script src="socket.io-client.js"></script>
+</head>
+<body>
+
+<h1>Controlador de Chappie</h1>
+
+<button onclick="myFunction1()" class="button">Automatic</button>
+<br>
+<button onclick="myFunction7()" class="button">Control remoto</button>
+<br>
+<br>
+<button onclick="myFunction2()" class="button1">Forward</button>
+<br>
+<button onclick="myFunction3()" class="button">Left</button>
+
+<button onclick="myFunction6()" class="button">Frenar</button>
+
+<button onclick="myFunction4()" class="button">Right</button>
+<br>
+<button onclick="myFunction5()" class="button2">Backward</button>
+<p id="demo"></p>
+
+<script type="text/javascript">
+var socket = io.connect('192.168.43.71:9000')
+function myFunction1() {
+document.getElementById("demo").innerHTML = "Modo automatico";
+socket.emit('evento', "6")
+}
+function myFunction2() {
+document.getElementById("demo").innerHTML = "Avanzando";
+socket.emit('evento', "1")
+}
+function myFunction3() {
+document.getElementById("demo").innerHTML = "Doblando a la izquierda";
+socket.emit('evento', "3")
+}
+function myFunction4() {
+document.getElementById("demo").innerHTML = "Doblando a la derecha";
+socket.emit('evento', "2")
+}
+function myFunction5() {
+document.getElementById("demo").innerHTML = "Retrocediendo";
+socket.emit('evento', "4")
+}
+function myFunction6() {
+document.getElementById("demo").innerHTML = "Frenando";
+socket.emit('evento', "5")
+}
+function myFunction7() {
+document.getElementById("demo").innerHTML = "Control remoto";
+socket.emit('evento', "7")
+}
+  </script>
+</body>
+</html>
